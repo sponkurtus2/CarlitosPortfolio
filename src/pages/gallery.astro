@@ -1,0 +1,99 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Gallery">
+        <main>
+                <hgroup>
+                        <h1>My gallery ^^</h1>
+                        <p>
+                                These photos capture cherished moments and loved ones dear to me. <i class="fa-regular fa-heart"></i> 
+                        </p>
+                </hgroup>
+
+                <hr />
+
+                <div class="collage">
+                        <div class="item">
+                                <img src="/galery/g1.jpeg" alt="Gallery img" />
+                        </div>
+                        <div class="item">
+                                <img src="/galery/g10.jpg" alt="Gallery img" />
+                        </div>
+                        <div class="item">
+                                <img src="/galery/g2.jpeg" alt="Gallery img" />
+                        </div>
+                        <div class="item">
+                                <img src="/galery/g8.jpeg" alt="Gallery img" />
+                        </div>
+                        <div class="item">
+                                <img src="/galery/g5.jpeg" alt="Gallery img" />
+                        </div>
+                        <div class="item">
+                                <img src="/galery/g4.jpeg" alt="Gallery img" />
+                        </div>
+                        <div class="item">
+                                <img src="/galery/g3.jpeg" alt="Gallery img" />
+                        </div>
+                        <div class="item">
+                                <img src="/galery/g9.jpeg" alt="Gallery img" />
+                        </div>
+                        <div class="item">
+                                <img src="/galery/g7.jpeg" alt="Gallery img" />
+                        </div>
+                        <div class="item">
+                                <img src="/galery/g6.jpeg" alt="Gallery img" />
+                        </div>
+                </div>
+        </main>
+</Layout>
+
+<style>
+        main {
+                margin: auto;
+                padding: 3rem;
+                width: 700px;
+                max-width: calc(100% - 2rem);
+                line-height: 1.6;
+                font-family: "Ubuntu Mono", monospace;
+        }
+
+        img {
+                border-radius: 10px;
+                max-width: 100%;
+                display: block;
+                height: auto;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .collage {
+                column-count: 2;
+                column-gap: 17px;
+        }
+
+        .item {
+                display: inline-block;
+                margin-bottom: 20px;
+                width: 100%;
+        }
+
+        .item img {
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        @media only screen and (max-width: 767px) and (min-width: 300px) {
+                .collage {
+                        column-count: 2;
+                }
+
+                main {
+                        margin: auto;
+                        padding: 1rem;
+                        width: 400px;
+                        max-width: calc(100% - 2rem);
+                }
+        }
+</style>
