@@ -1,0 +1,32 @@
+---
+import { Markdown } from '@astro/components'; // Asegúrate de que esta biblioteca esté disponible si usas Astro v1
+
+// Importa todos los artículos
+const articles = import.meta.glob('../../articles/*.md');
+
+// Obtiene el parámetro de la URL (slug)
+const { slug } = Astro.params;
+
+// Obtiene el artículo correspondiente según el slug
+const articleImport = articles[`../../articles/${slug}.md`];
+
+// Si el artículo no existe, arroja un error 404
+if (!articleImport) {
+  throw new Error('Article not found');
+}
+
+// Resuelve el artículo
+const { frontmatter, Content } = await articleImport();
+---
+<html>
+  <head>
+    <title>{frontmatter.title}</title>
+  </head>
+  <body>
+    <article>
+      <h1>{frontmatter.title}</h1>
+      <p>{frontmatter.description}</p>
+      <Markdown>{Content}</Markdown> {/* Muestra el contenido del archivo Markdown */}
+    </article>
+  </body>
+</html>
