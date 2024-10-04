@@ -9,7 +9,11 @@ const articles = import.meta.glob('../pages/articles/*.md')
 const articlePromises = Object.entries(articles).map(async ([path, resolver]) => {
   const article = await resolver();  // Resuelve el archivo
   const { frontmatter } = article;   // Obtén el frontmatter del artículo
-  return { path, frontmatter };
+
+  // Ajustar el path eliminando la parte innecesaria sin agregar prefijos adicionales
+  const formattedPath = path.replaceAll('/articles/', 'md').replace('.md', '').replace('.md', '');
+
+  return { path: formattedPath, frontmatter };
 });
 
 // Espera a que se resuelvan todas las promesas
@@ -20,9 +24,9 @@ const resolvedArticles = await Promise.all(articlePromises);
   <main>
 
     <ul class="articles-list">
-      {resolvedArticles.map(({ path, frontmatter }) => (
+      {resolvedArticles.map(({ path: formatedPath, frontmatter }) => (
         <li>
-          <a href={path} class="article-link">{frontmatter.title || "Untitled Article"}</a>
+          <a href={formatedPath} class="article-link">{frontmatter.title || "Untitled Article"}</a>
         </li>
       ))}
     </ul>

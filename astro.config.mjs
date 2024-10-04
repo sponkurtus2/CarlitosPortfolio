@@ -20,5 +20,6 @@ export default defineConfig({
       debug: false,
       loadOnIdle: true,
       globalInstance: false,
+      Content: true,
     })]
 });

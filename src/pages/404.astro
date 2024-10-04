@@ -1,0 +1,71 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="404 Not Found">
+  <main>
+    <h1>404</h1>
+    <p>Page not found</p>
+    <a href="/" class="article-link">Go back home</a>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 3rem;
+    width: 700px;
+    max-width: calc(100% - 2rem);
+    line-height: 1.6;
+    font-family: "Ubuntu Mono", monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 5rem;
+    color: #d6ccc2;
+    margin: 0;
+  }
+
+  p {
+    font-size: 1.5rem;
+    color: #d6ccc2;
+    margin-bottom: 2rem;
+  }
+
+  .article-link {
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #d6ccc2;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+
+  .article-link:hover {
+    color: #344e41;
+  }
+
+  /* Mobile-friendly adjustments */
+  @media (max-width: 768px) {
+    main {
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 4rem;
+    }
+
+    p {
+      font-size: 1.25rem;
+    }
+
+    .article-link {
+      font-size: 1.1rem;
+    }
+  }
+</style>
