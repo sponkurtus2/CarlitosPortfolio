@@ -1,8 +1,9 @@
 import { defineConfig } from 'astro/config';
 import swup from '@swup/astro';
-import node from "@astrojs/node";
 
 import mdx from "@astrojs/mdx";
+
+import vercel from '@astrojs/vercel/serverless';
 
 // https://astro.build/config
 export default defineConfig({
@@ -29,7 +30,5 @@ export default defineConfig({
     globalInstance: false
   }), mdx()],
   output: "server",
-  adapter: node({
-    mode: "standalone"
-  })
+  adapter: vercel()
 });
