@@ -4,27 +4,16 @@ import Layout from "../layouts/Layout.astro";
 const { frontmatter } = Astro.props;
 
 // Recibe el archivo markdown como props
-export const prerender = true;
-export async function get({ params }) {
-  try {
-    console.log(`Attempting to load: ../pages/articles/${params.slug}.md`);
-    const article = await import(`../pages/articles/${params.slug}.md`);
-    console.log("Article loaded successfully:", article);
+// export const prerender = true;
+// export async function get({ params }) {
+//     const article = await import(`../pages/articles/${params.slug}.md`);
 
-    return {
-      props: {
-        frontmatter: article.frontmatter,
-      },
-    };
-  } catch (e) {
-    console.error("Error loading article:", e);
-    return {
-      props: {
-        frontmatter: {},
-      },
-    };
-  }
-}
+//     return {
+//       props: {
+//         frontmatter: article.frontmatter,
+//       },
+//   }
+// }
 
 ---
 
