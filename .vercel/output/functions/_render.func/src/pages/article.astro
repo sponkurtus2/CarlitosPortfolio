@@ -1,0 +1,128 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={frontmatter.title}>
+  <article>
+    <h1>{frontmatter.title}</h1>
+    <p>{frontmatter.date}</p>
+
+    <!-- Asegurarte de que el contenido se renderiza correctamente como HTML -->
+    <div class="content">
+        <div class="content">
+            <slot />
+          </div>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  /* Aquí importas los estilos CSS que definimos arriba */
+  article {
+    font-family: "Ubuntu Mono", monospace;
+    max-width: 900px;
+    margin: auto;
+    padding: 2rem;
+    line-height: 1.6;
+    color: #d6ccc2;
+  }
+
+  /* Estilos para encabezados */
+  article h1, article h2, article h3 {
+    color: #d4a373;
+    margin-bottom: 1rem;
+  }
+
+  article h1 {
+    font-size: 2.5rem;
+  }
+
+  article h2 {
+    font-size: 2rem;
+  }
+
+  article h3 {
+    font-size: 1.75rem;
+  }
+
+  /* Estilos para párrafos */
+  article p {
+    margin-bottom: 1.5rem;
+    font-size: 1.15rem;
+  }
+
+  /* Estilos para listas */
+  article ul, article ol {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+  }
+
+  article li {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Estilos para enlaces */
+  article a {
+    color: #344e41;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+  }
+
+  article a:hover {
+    color: #bc6c25;
+  }
+
+  article a:link {
+    color: #d6ccc2;
+  }
+
+  article a:visited {
+    color: #d6ccc2;
+  }
+
+
+  /* Estilos para citas */
+  article blockquote {
+    margin: 1.5rem 0;
+    padding-left: 1rem;
+    border-left: 4px solid #bc6c25;
+    color: #bc6c25;
+    font-style: italic;
+    background-color: #1c1c1c;
+    padding: 1rem;
+  }
+
+  /* Estilos para imágenes */
+  article img {
+    max-width: 100%;
+    height: auto;
+    margin: 1rem 0;
+  }
+
+  /* Estilos para código */
+  article pre, article code {
+    background-color: #2e2e2e;
+    padding: 0.25rem 0.5rem;
+    border-radius: 5px;
+    color: #f4f4f4;
+  }
+
+  article pre {
+    overflow-x: auto;
+    padding: 1rem;
+  }
+
+  /* Estilos específicos para el contenido generado por Markdown */
+  .content h1, .content h2, .content h3 {
+    margin-top: 2rem;
+  }
+
+  .content p {
+    margin-bottom: 1.5rem;
+    font-size: 1.15rem;
+  }
+
+
+</style>

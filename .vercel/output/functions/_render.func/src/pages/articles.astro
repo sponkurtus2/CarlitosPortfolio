@@ -1,0 +1,90 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "@fontsource/ubuntu-mono";
+
+// Import md files
+const articles = import.meta.glob('../pages/articles/*.md')
+
+// Convierte los artículos en un array de promesas
+const articlePromises = Object.entries(articles).map(async ([path, resolver]) => {
+  const article = await resolver();  // Resuelve el archivo
+  const { frontmatter } = article;   // Obtén el frontmatter del artículo
+
+  // Ajustar el path eliminando la parte innecesaria sin agregar prefijos adicionales
+  const formattedPath = path.replaceAll('/articles/', 'md').replace('.md', '').replace('.md', '');
+
+  return { path: formattedPath, frontmatter };
+});
+
+// Espera a que se resuelvan todas las promesas
+const resolvedArticles = await Promise.all(articlePromises);
+---
+
+<Layout title="Carlinux articles">
+  <main>
+
+    <ul class="articles-list">
+      {resolvedArticles.map(({ path: formatedPath, frontmatter }) => (
+        <li>
+          <a href={formatedPath} class="article-link">{frontmatter.title || "Untitled Article"}</a>
+        </li>
+      ))}
+    </ul>
+
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 3rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    line-height: 1.6;
+    font-family: "Ubuntu Mono", monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  li {
+  list-style: none;
+  }
+
+  ul.articles-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 100%;
+  }
+
+  .articles-list li {
+    margin: 1rem 0;
+    text-align: center;
+  }
+
+  .article-link {
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #d6ccc2;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+
+  .article-link:hover {
+    color: #344e41;
+  }
+
+  /* Mobile-friendly adjustments */
+  @media (max-width: 768px) {
+    main {
+      padding: 2rem;
+    }
+
+    .article-link {
+      font-size: 1.1rem;
+    }
+  }
+</style>
