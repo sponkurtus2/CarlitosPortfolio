@@ -1,7 +1,6 @@
 ---
 layout: "../article.astro"
 title: "Why did I build this site?"
-description: "This is a description of my first article."
 date: 10-04-2024
 ---
 
@@ -40,4 +39,4 @@ Although frontend isn't my forte, I enjoyed working on this small, simple projec
 
 To everyone out there: put your hands to work and create your own portfolio. Believe me, it's fun. Put your soul into the work, and you'll see how your portfolio becomes a reflection of yourself.
 
-![Final IMG](../../images/WhyThis.JPG)
+![Final IMG](../../images/posts/WhyThis.JPG)

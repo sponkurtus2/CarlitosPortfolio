@@ -1,5 +1,28 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets"; 
+
+import g1 from '../images/gallery/g1.jpeg';
+import g2 from '../images/gallery/g2.jpeg';
+import g3 from '../images/gallery/g3.jpeg';
+import g4 from '../images/gallery/g4.jpg';
+import g5 from '../images/gallery/g5.jpg';
+import g6 from '../images/gallery/g6.jpg';
+import g7 from '../images/gallery/g7.jpg';
+import g8 from '../images/gallery/g8.jpg';
+import g9 from '../images/gallery/g9.jpg';
+
+const images = [
+  { src: g1, alt: "Primera foto de mi álbum" },
+  { src: g2, alt: "Segunda foto de mi álbum" },
+  { src: g3, alt: "Tercera foto de mi álbum" },
+  { src: g4, alt: "Cuarta foto de mi álbum" },
+  { src: g5, alt: "Quinta foto de mi álbum" },
+  { src: g6, alt: "Sexta foto de mi álbum" },
+  { src: g7, alt: "Séptima foto de mi álbum" },
+  { src: g8, alt: "Octava foto de mi álbum" },
+  { src: g9, alt: "Novena foto de mi álbum" },
+]
 ---
 
 <Layout title="Gallery">
@@ -14,37 +37,13 @@ import Layout from "../layouts/Layout.astro";
                 <hr />
 
                 <div class="collage">
-                        <div class="item">
-                                <img src="/galery/g1.jpeg" alt="Gallery img" />
-                        </div>
-                        <div class="item">
-                                <img src="/galery/g10.jpg" alt="Gallery img" />
-                        </div>
-                        <div class="item">
-                                <img src="/galery/g2.jpeg" alt="Gallery img" />
-                        </div>
-                        <div class="item">
-                                <img src="/galery/g8.jpeg" alt="Gallery img" />
-                        </div>
-                        <div class="item">
-                                <img src="/galery/g5.jpeg" alt="Gallery img" />
-                        </div>
-                        <div class="item">
-                                <img src="/galery/g4.jpeg" alt="Gallery img" />
-                        </div>
-                        <div class="item">
-                                <img src="/galery/g3.jpeg" alt="Gallery img" />
-                        </div>
-                        <div class="item">
-                                <img src="/galery/g9.jpeg" alt="Gallery img" />
-                        </div>
-                        <div class="item">
-                                <img src="/galery/g7.jpeg" alt="Gallery img" />
-                        </div>
-                        <div class="item">
-                                <img src="/galery/g6.jpeg" alt="Gallery img" />
-                        </div>
+                        {images.map((img, index) => (
+                                <div class="item">
+                                  <Image id={`img-${index}`} src={img.src} alt={img.alt} class="gallery-img"/>
+                                </div>
+                        ))}
                 </div>
+
         </main>
 </Layout>
 
@@ -52,7 +51,7 @@ import Layout from "../layouts/Layout.astro";
         main {
                 margin: auto;
                 padding: 3rem;
-                width: 700px;
+                width: 950px;
                 max-width: calc(100% - 2rem);
                 line-height: 1.6;
                 font-family: "Ubuntu Mono", monospace;
@@ -67,8 +66,8 @@ import Layout from "../layouts/Layout.astro";
         }
 
         .collage {
-                column-count: 2;
-                column-gap: 17px;
+                column-count: 3;
+                column-gap: 23px;
         }
 
         .item {

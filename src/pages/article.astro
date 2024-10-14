@@ -2,19 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 
 const { frontmatter } = Astro.props;
-
-// Recibe el archivo markdown como props
-// export const prerender = true;
-// export async function get({ params }) {
-//     const article = await import(`../pages/articles/${params.slug}.md`);
-
-//     return {
-//       props: {
-//         frontmatter: article.frontmatter,
-//       },
-//   }
-// }
-
 ---
 
 <Layout title={frontmatter.title}>
@@ -35,7 +22,7 @@ const { frontmatter } = Astro.props;
   /* Aquí importas los estilos CSS que definimos arriba */
   article {
     font-family: "Ubuntu Mono", monospace;
-    max-width: 800px;
+    max-width: 900px;
     margin: auto;
     padding: 2rem;
     line-height: 1.6;
