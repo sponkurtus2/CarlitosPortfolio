@@ -1,53 +1,53 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import "@fontsource/ubuntu-mono";
+import { Image } from "astro:assets";
+import me from '../images/mainImages/me.jpg';
+import psj1 from '../images/mainImages/psj.jpg';
+import us from '../images/mainImages/us.jpg';
+import me3 from '../images/mainImages/me3.jpg';
 ---
 
 <Layout title="Carlinux Portfolio">
 	<main>
-		<hgroup class="intro-section">
+		<hgroup>
 			<h1>Holi, I'm Carlos ^^</h1>
-			<p class="subtitle">Software Developer student from México</p>
+			<p>Software Developer student from México</p>
 		</hgroup>
 
-		<hr class="gradient-hr" />
-		
+		<hr />
 		<div class="collage">
 			<div class="item">
-				<img src="/images/me.jpg" alt="Carlos" />
+				 <Image src={me} alt="A photo of me"/>
 			</div>
 			<div class="item">
-				<img src="/images/psj.jpg" alt="Carlos" />
+				 <Image src={psj1} alt="A cute photo"/>
 			</div>
 			<div class="item">
-				<img src="/images/us.jpg" alt="Carlos" />
+				 <Image src={us} alt="A photo of idk"/>
 			</div>
-
 			<div class="item">
-				<img src="/images/me3.jpg" alt="Carlos" />
+				 <Image src={me3} alt="A photo of me again"/>
 			</div>
 		</div>
 
-		<div class="content-section">
-			<p>
-				Aspiring Software Engineer with a passion for crafting innovative
-				solutions. Currently immersed in the world of software engineering,
-				I find joy in the elegance of Java, the efficiency of Golang, and
-				the power of Linux systems. What some might view as mere code, I see
-				as a canvas for creativity and problem-solving.
-			</p>
-			<hr class="gradient-hr" />
-			<p>
-				Beyond technology, I have a soft spot for cats and a fondness for
-				snowy landscapes. When not engrossed in lines of code, you might
-				find me exploring the latest tech trends, curled up with a good
-				book, or thinking about my cat Blacky 🐈‍⬛.
-			</p>
-		</div>
+		<p>
+			Aspiring Software Engineer with a passion for crafting innovative
+			solutions. Currently immersed in the world of software engineering,
+			I find joy in the elegance of Java, the efficiency of Golang, and
+			the power of Linux systems. What some might view as mere code, I see
+			as a canvas for creativity and problem-solving.
+		</p>
+		<hr />
+		<p>
+			Beyond technology, I have a soft spot for cats and a fondness for
+			snowy landscapes. When not engrossed in lines of code, you might
+			find me exploring the latest tech trends, curled up with a good
+			book, or thinking about my cat Blacky 🐈‍⬛.
+		</p>
 
-		<hr class="gradient-hr" />
-		
-		<blockquote class="featured-quote">
+		<hr />
+		<blockquote>
 			"Intelligence is the ability to avoid doing work, yet getting the
 			work done."
 			<footer>
@@ -55,16 +55,31 @@ import "@fontsource/ubuntu-mono";
 			</footer>
 		</blockquote>
 
-		<div class="social-grid">
-			<a href="https://github.com/sponkurtus2" class="social-link">
-				<i class="fa-brands fa-github fa-fade"></i>
-				<span>Follow me on Github</span>
-			</a>
+		<div class="grid">
+			<div class="grid">
+				<div>
+					<i
+						class="fa-brands fa-github fa-fade"
+						style="--fa-animation-duration: 2s; --fa-fade-opacity: 0.7;"
+					></i>
+					<a href="https://github.com/sponkurtus2" class="secondary"
+						>Follow me on Github</a
+					>
+				</div>
+			</div>
 
-			<a href="https://www.instagram.com/https_carlitos_05/" class="social-link">
-				<i class="fa-brands fa-instagram fa-fade"></i>
-				<span>Follow me on Instagram</span>
-			</a>
+			<div class="grid">
+				<div>
+					<i
+						class="fa-brands fa-instagram fa-fade"
+						style="--fa-animation-duration: 2s; --fa-fade-opacity: 0.7;"
+					></i>
+					<a
+						href="https://www.instagram.com/https_carlitos_05/"
+						class="secondary">Follow me on Instagram</a
+					>
+				</div>
+			</div>
 		</div>
 	</main>
 </Layout>
@@ -79,74 +94,8 @@ import "@fontsource/ubuntu-mono";
 		font-family: "Ubuntu Mono", monospace;
 	}
 
-	.intro-section {
-		text-align: center;
-		margin-bottom: 2rem;
-	}
-
-	h1 {
-		font-size: 2.5rem;
-		margin-bottom: 0.5rem;
-		background: linear-gradient(45deg, #4a90e2, #63b3ed);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-	}
-
-	.subtitle {
-		font-size: 1.2rem;
-		color: #666;
-	}
-
-	.gradient-hr {
-		border: none;
-		height: 2px;
-		background: linear-gradient(90deg, transparent, #4a90e2, transparent);
-		margin: 2rem 0;
-	}
-
 	p {
-		font-size: 17px;
-		line-height: 1.8;
-	}
-
-	.content-section {
-		background: rgba(255, 255, 255, 0.05);
-		padding: 2rem;
-		border-radius: 12px;
-		margin: 2rem 0;
-	}
-
-	.featured-quote {
-		font-size: 1.2rem;
-		padding: 2rem;
-		background: rgba(74, 144, 226, 0.1);
-		border-left: 4px solid #4a90e2;
-		border-radius: 0 12px 12px 0;
-		margin: 2rem 0;
-	}
-
-	.social-grid {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 1.5rem;
-		margin-top: 2rem;
-	}
-
-	.social-link {
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-		padding: 1rem;
-		background: rgba(255, 255, 255, 0.05);
-		border-radius: 8px;
-		transition: transform 0.2s, background 0.2s;
-		text-decoration: none;
-		color: inherit;
-	}
-
-	.social-link:hover {
-		transform: translateY(-2px);
-		background: rgba(74, 144, 226, 0.1);
+		font-size: 20px;
 	}
 
 	img {
@@ -175,23 +124,16 @@ import "@fontsource/ubuntu-mono";
 		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	}
 
-	@media only screen and (max-width: 767px) {
-		.social-grid {
-			grid-template-columns: 1fr;
+	@media only screen and (max-width: 767px) and (min-width: 300px) {
+		.collage {
+			column-count: 2;
 		}
 
 		main {
-			padding: 1.5rem;
-			width: 100%;
-		}
-
-		h1 {
-			font-size: 2rem;
-		}
-
-		.featured-quote {
-			font-size: 1rem;
-			padding: 1.5rem;
+			margin: auto;
+			padding: 1rem;
+			width: 400px;
+			max-width: calc(100% - 2rem);
 		}
 	}
 </style>
