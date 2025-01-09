@@ -1,0 +1,133 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "@fontsource/ubuntu-mono";
+---
+
+<Layout title="Works">
+        <main>
+                <hgroup>
+                        <h1>My projects</h1>
+                        <p>
+                        In my free time, I like doing tiny projects, mostly CLI tools
+                        in Rust.
+                        </p>
+                </hgroup>
+
+                <hr />
+
+                <article class="project-card">
+                        <hgroup>
+                                <h5>GemFetch</h5>
+                                <h6>A simple neofetch-style inspired in a Gem</h6>
+                        </hgroup>
+
+                        <p>
+                        GemFetch is a command-line system information tool written in Rust that displays information about your operating system, software, and hardware in an aesthetic and visually pleasing way.
+                        </p>
+
+                        <div class="project-links">
+                                <a href="https://crates.io/crates/GemFetch" role="button" class="outline">
+                                        <i class="fa-solid fa-cube"></i>
+                                        View on crates.io
+                                </a>
+                        </div>
+                </article>
+
+                <article class="project-card">
+                        <hgroup>
+                                <h5>appInstalleR</h5>
+                                <h6>A simple CLI tool to install AppImages</h6>
+                        </hgroup>
+
+                        <p>
+                        appInstalleR automatically generates and installs .desktop files for AppImage applications, making them accessible from your system's application menu. It places the desktop entries in the user's local applications directory (~/.local/share/applications/).
+                        </p>
+
+                        <div class="project-links">
+                                <a href="https://crates.io/crates/appInstalleR" role="button" class="outline">
+                                        <i class="fa-solid fa-cube"></i>
+                                        View on crates.io
+                                </a>
+                        </div>
+                </article>
+
+                <hr />
+
+                <div class="grid">
+                        <div>
+                                <i class="fa-brands fa-github fa-fade"
+                                        style="--fa-animation-duration: 2s; --fa-fade-opacity: 0.7;"></i>
+                                <a href="https://github.com/sponkurtus2" class="secondary">Follow me on Github</a>
+                        </div>
+
+                        <div>
+                                <i class="fa-brands fa-instagram fa-fade"
+                                        style="--fa-animation-duration: 2s; --fa-fade-opacity: 0.7;"></i>
+                                <a href="https://www.instagram.com/https_carlitos_05/" class="secondary">Follow me on Instagram</a>
+                        </div>
+                </div>
+        </main>
+</Layout>
+
+<style>
+        main {
+                margin: auto;
+                padding: 3rem;
+                width: 800px;
+                max-width: calc(100% - 2rem);
+                line-height: 1.6;
+                font-family: "Ubuntu Mono", monospace;
+        }
+
+        p {
+                font-size: 20px;
+        }
+
+        .project-card {
+                background: rgba(255, 255, 255, 0.05);
+                padding: 2rem;
+                border-radius: 8px;
+                margin-bottom: 2rem;
+                transition: transform 0.2s ease-in-out;
+        }
+
+        .project-card:hover {
+                transform: translateY(-5px);
+        }
+
+        .project-links {
+                margin-top: 1.5rem;
+                display: flex;
+                gap: 1rem;
+        }
+
+        .project-links a {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+        }
+
+        .project-links i {
+                font-size: 1.2rem;
+        }
+
+        blockquote {
+                margin: 2rem 0;
+                padding: 1rem;
+                border-left: 4px solid rgb(var(--accent));
+                background: rgba(var(--accent), 0.1);
+        }
+
+        .grid {
+                margin-top: 3rem;
+        }
+
+        .grid a {
+                text-decoration: none;
+                margin-left: 0.5rem;
+        }
+
+        .grid i {
+                font-size: 1.5rem;
+        }
+</style>
