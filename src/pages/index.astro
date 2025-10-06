@@ -10,13 +10,18 @@ import me3 from '../images/mainImages/me3.jpg';
 
 <Layout title="Carlinux Portfolio">
 	<main>
-		<hgroup>
-			<h1>Holi, I'm Carlos ^^</h1>
-			<p>Software Developer student from México</p>
-		</hgroup>
+		<div class="intro-fade">
+			<hgroup>
+				<h1>Holi, I'm Carlos ^^</h1>
+				<p class="typing-container">
+					<span class="typing-effect">Software Developer student from México</span>
+				</p>
+			</hgroup>
+		</div>
 
-		<hr />
-		<div class="collage">
+		<div class="divider intro-fade"></div>
+
+		<div class="collage intro-fade">
 			<div class="item">
 				 <Image src={me} alt="A photo of me"/>
 			</div>
@@ -31,23 +36,41 @@ import me3 from '../images/mainImages/me3.jpg';
 			</div>
 		</div>
 
-		<p>
-			Aspiring Software Engineer with a passion for crafting innovative
-			solutions. Currently immersed in the world of software engineering,
-			I find joy in the elegance of Java, the efficiency of Golang, and
-			the power of Linux systems. What some might view as mere code, I see
-			as a canvas for creativity and problem-solving.
-		</p>
-		<hr />
-		<p>
-			Beyond technology, I have a soft spot for cats and a fondness for
-			snowy landscapes. When not engrossed in lines of code, you might
-			find me exploring the latest tech trends, curled up with a good
-			book, or thinking about my cat Blacky 🐈‍⬛.
-		</p>
+		<div class="divider intro-fade"></div>
 
-		<hr />
-		<blockquote>
+		<p class="intro-fade">
+      A developer who sees things differently and thinks deeply.
+      I like clouds, the sea, cats, and coding;
+      I think they are all great pleasures in life.
+      Both blue and green make me happy and remind me that there is so much in life to be lived.
+      Everyone should learn how to code—the ability to create what you or others need is incredible.
+		</p>
+		
+		<div class="divider intro-fade"></div>
+
+		<div class="key-points intro-fade">
+			<ul>
+				<li>
+					<i class="fa-solid fa-code"></i>
+					<span>I'm (almost) a Software Engineer who loves coding and creating things, mostly on the backend side.</span>
+				</li>
+				<li>
+					<i class="fa-solid fa-rocket"></i>
+					<span>I like many technologies, but I have some that I like even more, like Go or Rust, they are my go to when making something.</span>
+				</li>
+				<li>
+					<i class="fa-solid fa-desktop"></i>
+					<span>I rarely like creating sites, but when I do, I go with either Next or Astro.</span>
+				</li>
+				<li>
+					<i class="fa-solid fa-lightbulb"></i>
+					<span>I know someday I'll create something big that will help many people.</span>
+				</li>
+			</ul>
+		</div>
+		<div class="divider intro-fade"></div>
+
+		<blockquote class="intro-fade">
 			"Intelligence is the ability to avoid doing work, yet getting the
 			work done."
 			<footer>
@@ -55,30 +78,15 @@ import me3 from '../images/mainImages/me3.jpg';
 			</footer>
 		</blockquote>
 
-		<div class="grid">
-			<div class="grid">
-				<div>
-					<i
-						class="fa-brands fa-github fa-fade"
-						style="--fa-animation-duration: 2s; --fa-fade-opacity: 0.7;"
-					></i>
-					<a href="https://github.com/sponkurtus2" class="secondary"
-						>Follow me on Github</a
-					>
-				</div>
-			</div>
-
-			<div class="grid">
-				<div>
-					<i
-						class="fa-brands fa-instagram fa-fade"
-						style="--fa-animation-duration: 2s; --fa-fade-opacity: 0.7;"
-					></i>
-					<a
-						href="https://www.instagram.com/https_carlitos_05/"
-						class="secondary">Follow me on Instagram</a
-					>
-				</div>
+		<div class="grid-container intro-fade">
+			<div class="grid-item">
+				<i
+					class="fa-brands fa-github fa-fade"
+					style="--fa-animation-duration: 2s; --fa-fade-opacity: 0.7;"
+				></i>
+				<a href="https://github.com/sponkurtus2" class="secondary"
+					>Follow me on Github</a
+				>
 			</div>
 		</div>
 	</main>
@@ -94,46 +102,128 @@ import me3 from '../images/mainImages/me3.jpg';
 		font-family: "Ubuntu Mono", monospace;
 	}
 
-	p {
-		font-size: 20px;
+	h1 {
+		font-size: 2.5rem;
 	}
 
-	img {
-		border-radius: 10px;
-		max-width: 100%;
-		display: block;
-		height: auto;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	p {
+		font-size: 1.15rem;
 	}
+
+	blockquote {
+		font-size: 1.1rem;
+	}
+
+	.intro-fade {
+		animation: fadeIn 0.8s ease-in-out forwards;
+		opacity: 0;
+	}
+
+	.intro-fade:nth-of-type(2) { animation-delay: 0.2s; }
+	.intro-fade:nth-of-type(3) { animation-delay: 0.4s; }
+	.intro-fade:nth-of-type(4) { animation-delay: 0.6s; }
+	.intro-fade:nth-of-type(5) { animation-delay: 0.8s; }
+	.intro-fade:nth-of-type(6) { animation-delay: 1s; }
+    .intro-fade:nth-of-type(7) { animation-delay: 1.2s; }
+
+
+	@keyframes fadeIn {
+		from { opacity: 0; transform: translateY(15px); }
+		to { opacity: 1; transform: translateY(0); }
+	}
+
+	.typing-container {
+		display: inline-block;
+	}
+
+	.typing-effect {
+		white-space: nowrap;
+		overflow: hidden;
+		border-right: 2px solid transparent;
+		animation:
+			typing 3s steps(39, end) 0.5s forwards,
+			blink-caret 0.75s step-end infinite;
+		animation-delay: 0.5s;
+		width: 0; 
+	}
+
+	@keyframes typing {
+		from { width: 0; }
+		to { width: 100%; }
+	}
+
+	@keyframes blink-caret {
+		from, to { border-color: transparent; }
+		50% { border-color: rgba(255, 255, 255, 0.75); }
+	}
+
+	.divider {
+		height: 1px;
+		background: rgba(255, 255, 255, 0.1);
+		margin: 3rem auto;
+		width: 50%;
+	}
+
+	/* === Estilos para la Nueva Sección === */
+	.key-points {
+		margin: 2rem 0;
+	}
+
+	.key-points ul {
+		list-style: none;
+		padding: 0;
+	}
+
+	.key-points li {
+		display: flex;
+		align-items: flex-start;
+		margin-bottom: 1.5rem;
+		font-size: 1.15rem;
+	}
+
+	.key-points i {
+		font-size: 1.2rem;
+		margin-right: 1.5rem;
+		color: #d4a373; /* Un color de acento que combine */
+		margin-top: 4px; /* Alineación vertical del icono */
+	}
+	/* === Fin de los nuevos estilos === */
 
 	.collage {
+		margin-top: 2rem;
 		column-count: 2;
-		column-gap: 17px;
+		column-gap: 1rem;
 	}
 
 	.item {
-		display: inline-block;
-		margin-bottom: 20px;
-		width: 100%;
+		margin-bottom: 1rem;
+		border-radius: 8px;
+		overflow: hidden;
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+	
+	.item:hover {
+		transform: scale(1.03);
+		box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 	}
 
 	.item img {
 		width: 100%;
 		height: auto;
-		border-radius: 8px;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		display: block;
 	}
 
-	@media only screen and (max-width: 767px) and (min-width: 300px) {
-		.collage {
-			column-count: 2;
-		}
+	.grid-container {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2rem;
+		justify-content: center;
+		margin-top: 2rem;
+	}
 
-		main {
-			margin: auto;
-			padding: 1rem;
-			width: 400px;
-			max-width: calc(100% - 2rem);
-		}
+	@media only screen and (max-width: 767px) {
+		main { padding: 2rem 1rem; }
+		h1 { font-size: 2.1rem; }
+		p { font-size: 1.1rem; }
 	}
 </style>

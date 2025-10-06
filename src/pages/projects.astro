@@ -4,150 +4,162 @@ import "@fontsource/ubuntu-mono";
 ---
 
 <Layout title="Works">
-        <main>
+    <main>
+        <hgroup>
+            <h1>My projects</h1>
+            <p>
+                In my free time, I like doing tiny projects, mostly CLI tools
+                in Rust.
+            </p>
+        </hgroup>
+
+        <hr />
+
+        <div class="projects-grid">
+            <article class="project-card">
                 <hgroup>
-                        <h1>My projects</h1>
-                        <p>
-                        In my free time, I like doing tiny projects, mostly CLI tools
-                        in Rust.
-                        </p>
+                    <h5>GemFetch</h5>
+                    <h6>A simple neofetch-style inspired in a Gem</h6>
                 </hgroup>
-
-                <hr />
-
-                <article class="project-card">
-                        <hgroup>
-                                <h5>GemFetch</h5>
-                                <h6>A simple neofetch-style inspired in a Gem</h6>
-                        </hgroup>
-
-                        <p>
-                        GemFetch is a command-line system information tool written in Rust that displays information about your operating system, software, and hardware in an aesthetic and visually pleasing way.
-                        </p>
-
-                        <div class="project-links">
-                                <a href="https://crates.io/crates/GemFetch" role="button" class="outline">
-                                        <i class="fa-solid fa-cube"></i>
-                                        View on crates.io
-                                </a>
-                        </div>
-                </article>
-
-                <article class="project-card">
-                        <hgroup>
-                                <h5>thinkG</h5>
-                                <h6>A minimal site to share thinks</h6>
-                        </hgroup>
-
-                        <p>
-                        thinG is a simple and minimal website to share your thoughts.
-                        The site is made in Go, and deployed on Render.
-                        </p>
-
-                        <div class="project-links">
-                                <a href="https://thinkg.onrender.com/" role="button" class="outline">
-                                        <i class="fa-solid fa-globe"></i>
-                                        View Site
-                                </a>
-                        </div>
-                </article>
-
-
-                <article class="project-card">
-                        <hgroup>
-                                <h5>appInstalleR</h5>
-                                <h6>A simple CLI tool to install AppImages</h6>
-                        </hgroup>
-
-                        <p>
-                        appInstalleR automatically generates and installs .desktop files for AppImage applications, making them accessible from your system's application menu. It places the desktop entries in the user's local applications directory (~/.local/share/applications/).
-                        </p>
-
-                        <div class="project-links">
-                                <a href="https://crates.io/crates/appInstalleR" role="button" class="outline">
-                                        <i class="fa-solid fa-cube"></i>
-                                        View on crates.io
-                                </a>
-                        </div>
-                </article>
-
-                <hr />
-
-                <div class="grid">
-                        <div>
-                                <i class="fa-brands fa-github fa-fade"
-                                        style="--fa-animation-duration: 2s; --fa-fade-opacity: 0.7;"></i>
-                                <a href="https://github.com/sponkurtus2" class="secondary">Follow me on Github</a>
-                        </div>
-
-                        <div>
-                                <i class="fa-brands fa-instagram fa-fade"
-                                        style="--fa-animation-duration: 2s; --fa-fade-opacity: 0.7;"></i>
-                                <a href="https://www.instagram.com/https_carlitos_05/" class="secondary">Follow me on Instagram</a>
-                        </div>
+                <p>
+                    GemFetch is a command-line system information tool written in Rust that displays information about your operating system, software, and hardware in an aesthetic and visually pleasing way.
+                </p>
+                <div class="project-links">
+                    <a href="https://crates.io/crates/GemFetch" role="button" class="outline">
+                        <i class="fa-solid fa-cube"></i>
+                        View on crates.io
+                    </a>
                 </div>
-        </main>
+            </article>
+
+            <article class="project-card">
+                <hgroup>
+                    <h5>appInstalleR</h5>
+                    <h6>A simple CLI tool to install AppImages</h6>
+                </hgroup>
+                <p>
+                    appInstalleR automatically generates and installs .desktop files for AppImage applications, making them accessible from your system's application menu.
+                    It places the desktop entries in the user's local applications directory (~/.local/share/applications/).
+                </p>
+                <div class="project-links">
+                    <a href="https://crates.io/crates/appInstalleR" role="button" class="outline">
+                        <i class="fa-solid fa-cube"></i>
+                        View on crates.io
+                    </a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <hgroup>
+                    <h5>StellarKids</h5>
+                    <h6>Educational platform for children with different abilities</h6>
+                </hgroup>
+                <p>
+                    Developed for the NASA Space Apps CUU hackathon, StellarKids is an innovative educational platform that teaches children with different abilities through interactive comics. The platform features engaging, accessible content that allows children to read and interact with educational material.
+                </p>
+                <div class="project-links">
+                    <a href="https://stellarkids.lat" role="button" class="outline">
+                        <i class="fa-solid fa-globe"></i>
+                        Visit Website
+                    </a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <hgroup>
+                    <h5>Instanté Chihuahua</h5>
+                    <h6>Retro photography showcase of local beauty</h6>
+                </hgroup>
+                <p>
+                    A personal passion project where I share the local beauty of Chihuahua through retro-style photography. Using vintage cameras, I capture and publish moments that highlight the unique charm and character of our city, creating a visual love letter to Chihuahua.
+                </p>
+                <div class="project-links">
+                    <a href="https://www.instantechihuahua.com/" role="button" class="outline">
+                        <i class="fa-solid fa-globe"></i>
+                        Visit Gallery
+                    </a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <hgroup>
+                    <h5>goFs</h5>
+                    <h6>Simple file sharing platform built with Go</h6>
+                </hgroup>
+                <p>
+                    A lightweight file sharing web application where users can upload files and receive unique, shareable links. Built with Go, it provides a straightforward solution for temporary file distribution without unnecessary complexity.
+                </p>
+                <div class="project-links">
+                    <a href="https://github.com/sponkurtus2/goFs" role="button" class="outline">
+                        <i class="fa-brands fa-github"></i>
+                        View on GitHub
+                    </a>
+                </div>
+            </article>
+        </div>
+    </main>
 </Layout>
 
 <style>
-        main {
-                margin: auto;
-                padding: 3rem;
-                width: 800px;
-                max-width: calc(100% - 2rem);
-                line-height: 1.6;
-                font-family: "Ubuntu Mono", monospace;
-        }
+    main {
+        margin: auto;
+        padding: 3rem;
+        width: 900px;
+        max-width: calc(100% - 2rem);
+        line-height: 1.6;
+        font-family: "Ubuntu Mono", monospace;
+    }
 
-        p {
-                font-size: 20px;
-        }
+    p {
+        font-size: 20px;
+    }
 
-        .project-card {
-                background: rgba(255, 255, 255, 0.05);
-                padding: 2rem;
-                border-radius: 8px;
-                margin-bottom: 2rem;
-                transition: transform 0.2s ease-in-out;
-        }
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+    }
 
-        .project-card:hover {
-                transform: translateY(-5px);
-        }
+    .project-card {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 2rem;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
 
-        .project-links {
-                margin-top: 1.5rem;
-                display: flex;
-                gap: 1rem;
-        }
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
 
-        .project-links a {
-                display: flex;
-                align-items: center;
-                gap: 0.5rem;
-        }
+    .project-links {
+        margin-top: 1.5rem;
+        display: flex;
+        gap: 1rem;
+    }
 
-        .project-links i {
-                font-size: 1.2rem;
-        }
+    .project-links a {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
 
-        blockquote {
-                margin: 2rem 0;
-                padding: 1rem;
-                border-left: 4px solid rgb(var(--accent));
-                background: rgba(var(--accent), 0.1);
-        }
+    .project-links i {
+        font-size: 1.2rem;
+    }
 
-        .grid {
-                margin-top: 3rem;
-        }
+    .grid {
+        margin-top: 3rem;
+    }
 
-        .grid a {
-                text-decoration: none;
-                margin-left: 0.5rem;
-        }
+    .grid a {
+        text-decoration: none;
+        margin-left: 0.5rem;
+    }
 
-        .grid i {
-                font-size: 1.5rem;
-        }
+    .grid i {
+        font-size: 1.5rem;
+    }
 </style>

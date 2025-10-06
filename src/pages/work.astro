@@ -4,107 +4,166 @@ import "@fontsource/ubuntu-mono";
 ---
 
 <Layout title="Works">
-        <main>
-                <hgroup>
-                        <h1>My recent work</h1>
-                        <p>
-                                Venturing into the realm of software engineering
-                                with a thirst for knowledge and hands-on
-                                experience, I am excited to showcase my early
-                                projects and growth in this dynamic field.
-                        </p>
-                </hgroup>
+    <main>
+        <hgroup>
+            <h1>My recent work</h1>
+            <p>
+                Venturing into the realm of software engineering
+                with a thirst for knowledge and hands-on
+                experience, I am excited to showcase my early
+                projects and growth in this dynamic field.
+            </p>
+        </hgroup>
 
-                <hr />
+        <div class="timeline">
 
-                 <hgroup>
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <i class="fa-solid fa-briefcase"></i>
+                </div>
+                <div class="timeline-content">
+                    <hgroup>
+                        <h5>NearMX</h5>
+                        <h6>Developer - Current</h6>
+                    </hgroup>
+                    <p>
+                    Currently, I am the developer for a freelance project to create an advanced AI support chatbot.
+                    This role involves overseeing the entire project lifecycle, from conception to deployment.
+                    </p>
+                    <ul>
+                        <li>Development of a custom AI chatbot by integrating Laravel with the OpenAI API.</li>
+                        <li>Designing and maintaining the cloud infrastructure on Digital Ocean to ensure high availability and performance.</li>
+                        <li>Building robust backend services and an intuitive frontend to facilitate effective user-chatbot interactions.</li>
+                        <li>Establishing a foundation for a ongoing partnership, with this chatbot being the first in a suite of planned software tools for many clients.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <i class="fa-solid fa-briefcase"></i>
+                </div>
+                <div class="timeline-content">
+                    <hgroup>
                         <h5>Autozone</h5>
-                        <h6>Intership in Software development - 2024</h6>
-                </hgroup>
-
-                <p>
-                        During my internship at Autozone, I contributed to the "Career Path" project, 
-                        which serves as a comprehensive career map for employees. This platform allows 
-                        employees to explore various career options and the necessary requirements to 
-                        apply for specific positions. My responsibilities included both development and 
+                        <h6>Internship in Software development - 2024</h6>
+                    </hgroup>
+                    <p>
+                        During my internship at Autozone, I contributed to the "Career Path" project,
+                        which serves as a comprehensive career map for employees. This platform allows
+                        employees to explore various career options and the necessary requirements to
+                        apply for specific positions.
+                        My responsibilities included both development and
                         modernization of key components of the system.
-                </p>
+                    </p>
+                    <ul>
+                        <li>I developed new features using Java and Spring Boot, such as Java controllers and services.</li>
+                        <li>I migrated legacy code from Java 7 to Java 17, improving performance and maintainability.</li>
+                        <li>Integrated Oracle DB for persistent data management, ensuring data reliability and integrity.</li>
+                        <li>Collaborated on frontend tasks using Next.js, optimizing the user interface for a seamless experience.</li>
+                        <li>Implemented comprehensive testing procedures to ensure the quality and stability of the platform.</li>
+                    </ul>
+                </div>
+            </div>
 
-                <ul>
-                        <li>
-                                I developed new features using Java and Spring Boot, such as Java controllers and services.
-                        </li>
-                        <li>
-                                I migrated legacy code from Java 7 to Java 17, improving performance and maintainability.
-
-                        </li>
-                        <li>
-                                Integrated Oracle DB for persistent data management, ensuring data reliability and integrity.
-                        </li>
-                        <li>
-                                Collaborated on frontend tasks using Next.js, optimizing the user interface for a seamless experience.
-                            </li>
-                            <li>
-                                Implemented comprehensive testing procedures to ensure the quality and stability of the platform.
-                            </li>
-                </ul>
-
-                <hr>
-
-                <hgroup>
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <i class="fa-solid fa-bus"></i>
+                </div>
+                <div class="timeline-content">
+                    <hgroup>
                         <h5>Bustrack</h5>
                         <h6>Software developer - 2024</h6>
-                </hgroup>
-
-                <p>
+                    </hgroup>
+                    <p>
                         Bustrack is a project that I co-founded with two
                         friends, where we envisioned and brought to life an
-                        innovative transportation platform. My primary role
+                        innovative transportation platform.
+                        My primary role
                         involved leading the design, development, and
                         implementation of the web application.
-                </p>
-
-                <ul>
-                        <li>
-                                bustrack provides real-time information about
-                                the location of buses
+                    </p>
+                    <ul>
+                        <li>bustrack provides real-time information about the location of buses</li>
+                        <li>It enhances safety and communication within the transportation system. This includes the
+                            implementation of unique QR codes for each user,
+                            enabling more efficient and secure access
+                            control.
                         </li>
-                        <li>
-                                It enhances safety and communication within the
-                                transportation system. This includes the
-                                implementation of unique QR codes for each user,
-                                enabling more efficient and secure access
-                                control.
+                        <li>It improves the accessibility of the
+                            transportation system for people with visual
+                            impairments.
                         </li>
-                        <li>
-                                It improves the accessibility of the
-                                transportation system for people with visual
-                                impairments.
-                        </li>
-                </ul>
-
-                <a href="https://bus-track.vercel.app/" class="secondary"
-                        >You can view the site here.</a
-                >
-
-        </main>
+                    </ul>
+                    <a href="https://bus-track.vercel.app/" class="secondary">You can view the site here.</a>
+                </div>
+            </div>
+        </div>
+    </main>
 </Layout>
 
 <style>
-        main {
-                margin: auto;
-                padding: 3rem;
-                width: 800px;
-                max-width: calc(100% - 2rem);
-                line-height: 1.6;
-                font-family: "Ubuntu Mono", monospace;
-        }
+    main {
+        margin: auto;
+        padding: 3rem;
+        width: 800px;
+        max-width: calc(100% - 2rem);
+        line-height: 1.6;
+        font-family: "Ubuntu Mono", monospace;
+    }
 
-        p {
-                font-size: 20px;
-        }
+    .timeline {
+        position: relative;
+        margin-top: 2rem;
+        padding: 1rem 0;
+    }
 
-        li {
-                font-size: 19px;
-        }
+    .timeline::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 30px;
+        height: 100%;
+        width: 4px;
+        background: #344e41;
+    }
+
+    .timeline-item {
+        position: relative;
+        margin-bottom: 2rem;
+    }
+
+    .timeline-icon {
+        position: absolute;
+        left: 15px;
+        top: 0;
+        width: 30px;
+        height: 30px;
+        background: #0f1114;
+        border: 4px solid #344e41;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+    }
+
+    .timeline-icon i {
+        color: #d6ccc2;
+    }
+
+    .timeline-content {
+        margin-left: 60px;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 1.5rem;
+        border-radius: 8px;
+    }
+
+    p {
+        font-size: 20px;
+    }
+
+    li {
+        font-size: 19px;
+    }
 </style>

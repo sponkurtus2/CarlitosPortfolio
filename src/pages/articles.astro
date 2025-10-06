@@ -2,35 +2,22 @@
 import Layout from "../layouts/Layout.astro";
 import "@fontsource/ubuntu-mono";
 
-// Import md files
-const articles = import.meta.glob('../pages/articles/*.md')
-
-// Convierte los artículos en un array de promesas
-const articlePromises = Object.entries(articles).map(async ([path, resolver]) => {
-  const article = await resolver();  // Resuelve el archivo
-  const { frontmatter } = article;   // Obtén el frontmatter del artículo
-
-  // Ajustar el path eliminando la parte innecesaria sin agregar prefijos adicionales
-  const formattedPath = path.replaceAll('/articles/', 'md').replace('.md', '').replace('.md', '');
-
-  return { path: formattedPath, frontmatter };
-});
-
-// Espera a que se resuelvan todas las promesas
-const resolvedArticles = await Promise.all(articlePromises);
+const articles = await Astro.glob('./articles/*.md');
 ---
 
 <Layout title="Carlinux articles">
   <main>
-
+    <h1>Articles</h1>
     <ul class="articles-list">
-      {resolvedArticles.map(({ path: formatedPath, frontmatter }) => (
-        <li>
-          <a href={formatedPath} class="article-link">{frontmatter.title || "Untitled Article"}</a>
+      {articles.map((article) => (
+        <li class="article-item">
+          <a href={article.url} class="article-link">
+            <span class="article-title">{article.frontmatter.title || "Untitled Article"}</span>
+            <span class="article-date">{article.frontmatter.date}</span>
+          </a>
         </li>
       ))}
     </ul>
-
   </main>
 </Layout>
 
@@ -42,49 +29,67 @@ const resolvedArticles = await Promise.all(articlePromises);
     max-width: calc(100% - 2rem);
     line-height: 1.6;
     font-family: "Ubuntu Mono", monospace;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
-  li {
-  list-style: none;
+  h1 {
+    text-align: center;
+    margin-bottom: 2rem;
   }
 
-  ul.articles-list {
+  .articles-list {
     padding: 0;
     margin: 0;
     list-style: none;
-    width: 100%;
   }
 
-  .articles-list li {
+  .article-item {
     margin: 1rem 0;
-    text-align: center;
   }
 
   .article-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     text-decoration: none;
     font-size: 1.25rem;
     font-weight: 600;
     color: #d6ccc2;
-    padding: 0.5rem 1rem;
-    display: inline-block;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
     transition: all 0.3s ease;
   }
 
   .article-link:hover {
-    color: #344e41;
+    background-color: #344e41;
+    color: white;
   }
 
-  /* Mobile-friendly adjustments */
+  .article-title {
+    flex-grow: 1;
+  }
+
+  .article-date {
+    font-size: 1rem;
+    color: #a0a0a0;
+  }
+
+  li {
+      list-style-type: none;
+  }
+
   @media (max-width: 768px) {
     main {
       padding: 2rem;
     }
 
     .article-link {
-      font-size: 1.1rem;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .article-date {
+      margin-top: 0.5rem;
     }
   }
 </style>
